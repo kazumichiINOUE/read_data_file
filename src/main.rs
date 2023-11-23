@@ -18,9 +18,13 @@ fn main() {
             let parts: Vec<&str> = line.split_whitespace().collect();
 
             if parts.len() == 7 {   // 7はlod_dataの列数
+                let t: i64 = parts[0].parse().expect("Tのパースに失敗しました");
                 let x: f64 = parts[1].parse().expect("Xのパースに失敗しました");
                 let y: f64 = parts[2].parse().expect("Yのパースに失敗しました");
                 let a: f64 = parts[3].parse().expect("Aのパースに失敗しました");
+                let n: f64 = parts[4].parse().expect("NUMのパースに失敗しました");
+                let f: i32 = parts[5].parse().expect("FLAGのパースに失敗しました");
+                let s: String = parts[6].parse().expect("endのパースに失敗しました");
                 points_data.push((x, y, a));
             }
         }
